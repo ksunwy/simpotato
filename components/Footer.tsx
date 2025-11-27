@@ -3,7 +3,7 @@ import Link from "next/link"
 const Footer = ({footerRef}: {footerRef: any}) => {
   return (
     <footer ref={footerRef} id="footer" className="relative w-full h-[52.82rem] bg-blue flex flex-col gap-[9.16rem] py-[6.84rem] text-white bg-(--blue) overflow-hidden">
-      <img src="/svg/patterns/FooterPattern.svg" alt="simpotato" className="absolute bottom-0 right-0" />
+      <img src="/svg/patterns/FooterPattern.svg" alt="simpotato" className="absolute bottom-0 md:-bottom-[50%] right-0 scale-250 md:scale-175" />
       <img src="/svg/LogoLightRu.svg" alt="SIMPOTATO" className="w-full h-[19.77rem]" />
       <div className="flex flex-col gap-[5.13rem] width-restrictions">
         <div className="flex items-center justify-between">

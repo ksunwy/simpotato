@@ -221,12 +221,12 @@ html {
 }
 
 .width-restrictions {
-  max-width: 1472px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 100%;
+  padding-left: clamp(1rem, 4vw, 2rem);
+  padding-right: clamp(1rem, 4vw, 2rem);
+  max-width: min(1472px, 100% - 2rem);
 }
 
 @import "tailwindcss";
@@ -239,17 +239,12 @@ html {
 
 .product-btn {
   padding: .4rem 0.875rem;
-  border-radius: 8px;
+  border-radius: 16px;
   font-size: 2.05rem;
   border: 2px solid var(--black);
   transition: all 0.3s ease;
   background: transparent;
   cursor: pointer;
-}
-
-.product-btn.active {
-  color: var(--blue);
-  border-color: var(--blue);
 }
 
 .slide {
@@ -270,8 +265,8 @@ html {
 }
 
 .slide.active img {
-  width: 591px;
-  transform: rotate(0deg) scale(1.1) translateY(-40);
+  width: 496px;
+  transform: rotate(0deg) translateY(-40);
 }
 
 .slide.left img {
@@ -292,8 +287,33 @@ html {
   transform: scale(0.4) rotate(0deg) translateY(50);
   opacity: 0.5;
 }
+
+@media only screen and (max-width: 768px) {
+  .product-btn {
+    border-radius: 8px;
+    border-width: 1px;
+  }
+
+  .slide.active img {
+    width: 496px;
+    transform: rotate(0deg) translateY(0);
+  }
+
+  .slide.left img {
+    transform: rotate(-3.5deg) scale(0.475) translateY(0);
+  }
+
+  .slide.right img {
+    transform: rotate(3.5deg) scale(0.475) translateY(0);
+  }
+
+  .slide:not(.active):not(.left):not(.right) img {
+    transform: scale(0.4) rotate(0deg) translateY(0);
+  }
+}
+
 .circle-path {
-  fill: transparent; 
+  fill: transparent;
   transition: fill 0.3s ease;
 }
 

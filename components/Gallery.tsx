@@ -14,7 +14,6 @@ const Gallery = () => {
 
       <div className="pointer-events-none absolute top-0 left-0 w-full h-full flex items-center justify-center">
         <div className="relative width-restrictions w-full h-full">
-
           <button
             className={`
               pointer-events-auto custom-prev absolute left-6 top-1/2 -translate-y-1/2 z-20

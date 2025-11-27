@@ -4,75 +4,22 @@ import { Swiper, SwiperSlide, SwiperClass } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
 const buttons = ["Тайский перец", "Сметана и зелень", "Сыр", "Краб", "С солью", "Марокканский соус"];
+const buttonColors = ["#ED323C", "#0050A9", "#FDB81C", "#FF808B", "#2AB5AD", "#216437"];
 const products = ["/img/products/pepper.png", "/img/products/onion.png", "/img/products/cheese.png", "/img/products/crab.png", "/img/products/salt.png", "/img/products/sauce.png"];
 
 const CustomPrevButton = () => (
-    <svg
-        width="59"
-        height="59"
-        viewBox="0 0 59 59"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            className="circle-path"
-            d="M29.1302 56.7604C44.39 56.7604 56.7604 44.39 56.7604 29.1302C56.7604 13.8705 44.39 1.5 29.1302 1.5C13.8705 1.5 1.5 13.8705 1.5 29.1302C1.5 44.39 13.8705 56.7604 29.1302 56.7604Z"
-            stroke="black"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-        <path
-            d="M29.1302 18.0781L18.0781 29.1302L29.1302 40.1823"
-            stroke="black"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-        <path
-            d="M40.1823 29.1304H18.0781"
-            stroke="black"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
+    <svg width="26" height="48" viewBox="0 0 26 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.8975 1.25L1.2504 23.8971L23.8975 46.5441" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
 
 const CustomNextButton = () => (
-    <svg
-        width="59"
-        height="59"
-        viewBox="0 0 59 59"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            className="circle-path"
-            d="M29.1305 56.7604C13.8708 56.7604 1.50032 44.39 1.50032 29.1302C1.50032 13.8705 13.8708 1.5 29.1305 1.5C44.3903 1.5 56.7607 13.8705 56.7607 29.1302C56.7607 44.39 44.3903 56.7604 29.1305 56.7604Z"
-            stroke="black"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-        <path
-            d="M29.1305 18.0781L40.1826 29.1302L29.1305 40.1823"
-            stroke="black"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-        <path
-            d="M18.0785 29.1304H40.1826"
-            stroke="black"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
+    <svg width="26" height="48" viewBox="0 0 26 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.25 1.25L23.8971 23.8971L1.25 46.5441" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
 
-const Products = ({productsRef}: {productsRef: any}) => {
+const Products = ({ productsRef }: { productsRef: any }) => {
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const swiperRef = useRef<SwiperClass | null>(null);
 
@@ -87,22 +34,30 @@ const Products = ({productsRef}: {productsRef: any}) => {
     };
 
     return (
-        <section ref={productsRef} id="products" className="bg-[#F2F2F2] w-dvw h-dvh relative flex flex-col gap-[4.19rem] py-[6.84rem]">
-            <div className="absolute top-1/2 left-0 w-full h-full -translate-y-1/2">
+        <section ref={productsRef} id="products" className="bg-[#F2F2F2] w-dvw h-fit relative flex flex-col gap-[4.19rem] py-[6.84rem] overflow-hidden">
+            <div className="absolute top-1/2 left-1/2 w-full h-full -translate-y-1/2 -translate-x-1/2">
                 <Image
                     src="/svg/patterns/ProductsPatter.svg"
                     alt="simpotato"
                     fill
-                    className="object-contain object-left"
+                    className="scale-350"
                     priority
                 />
             </div>
-            <div className="relative z-10 flex gap-[1.71rem] w-full width-restrictions">
+            <div className="relative z-10 flex flex-wrap gap-[1.71rem] w-full width-restrictions">
                 {buttons.map((label, index) => (
                     <button
                         key={index}
                         onClick={() => goToSlide(index)}
                         className={`product-btn ${activeIndex === index ? "active" : ""}`}
+                        style={
+                            activeIndex === index
+                                ? {
+                                    color: buttonColors[index],
+                                    borderColor: buttonColors[index],
+                                }
+                                : undefined
+                        }
                     >
                         {label}
                     </button>
@@ -114,6 +69,7 @@ const Products = ({productsRef}: {productsRef: any}) => {
                     spaceBetween={20}
                     slidesPerView={3}
                     centeredSlides
+                    centerInsufficientSlides
                     speed={900}
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
                     onSlideChange={handleSlideChange}
@@ -121,7 +77,15 @@ const Products = ({productsRef}: {productsRef: any}) => {
                         prevEl: ".custom-prev",
                         nextEl: ".custom-next",
                     }}
-                    className="w-full h-full"
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                        },
+                    }}
+                    className="w-full md:h-[70dvh]"
                 >
                     {buttons.map((_, i) => {
                         const isActive = i === activeIndex;
@@ -131,18 +95,17 @@ const Products = ({productsRef}: {productsRef: any}) => {
                         return (
                             <SwiperSlide key={i}>
                                 <div className={`slide ${isActive ? "active" : ""} ${isLeft ? "left" : ""} ${isRight ? "right" : ""}`}>
-                                    <Image src={products[i]} alt={buttons[i]} width={591} height={824} />
+                                    <Image src={products[i]} alt={buttons[i]} width={496} height={724} />
                                 </div>
                             </SwiperSlide>
                         );
                     })}
-
                 </Swiper>
 
-                <button className="custom-prev custom-button absolute right-[6.84rem] top-0 cursor-pointer z-50 ">
+                <button className="custom-prev custom-button absolute left-6 top-1/2 -translate-y-1/2 cursor-pointer z-50 ">
                     <CustomPrevButton />
                 </button>
-                <button className="custom-next custom-button absolute right-0 top-0 cursor-pointer z-50 ">
+                <button className="custom-next custom-button absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer z-50 ">
                     <CustomNextButton />
                 </button>
             </div>
