@@ -7,10 +7,10 @@ const Gallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperClass | null>(null);
 
-  const totalSlides = 4; 
+  const totalSlides = 4;
 
   return (
-    <section className="w-dvw h-fit relative">
+    <section className="w-dvw h-fit relative overflow-hidden">
 
       <div className="pointer-events-none absolute top-0 left-0 w-full h-full flex items-center justify-center">
         <div className="relative width-restrictions w-full h-full">
@@ -91,44 +91,49 @@ const Gallery = () => {
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       >
-        <SwiperSlide>
-          <Image
-            src="/img/slider/chipsPepperSlider.jpg"
-            alt="Тайский перец"
-            width={1920}
-            height={1080}
-            className="object-contain w-full h-full"
-          />
+        <SwiperSlide className='flex items-center justify-center h-dvh overflow-hidden'>
+          <div className="flex items-center justify-center w-full">
+            <Image
+              src="/img/slider/chipsPepperSlider.jpg"
+              alt="Тайский перец"
+              width={1920}
+              height={1080}
+              className="object-contain w-[1100px] md:w-full max-w-none h-auto"
+            />
+          </div>
         </SwiperSlide>
-
-        <SwiperSlide>
-          <Image
-            src="/img/slider/chipsCheeseSlider.jpg"
-            alt="Сыр"
-            width={1920}
-            height={1080}
-            className="object-contain w-full h-full"
-          />
+        <SwiperSlide className='flex items-center justify-center h-dvh overflow-hidden'>
+          <div className="flex items-center justify-center w-full">
+            <Image
+              src="/img/slider/chipsCheeseSlider.jpg"
+              alt="Сыр"
+              width={1920}
+              height={1080}
+              className="object-contain w-[1100px] md:w-full max-w-none h-auto"
+            />
+          </div>
         </SwiperSlide>
-
-        <SwiperSlide>
-          <Image
-            src="/img/slider/chipsOnionSlider.jpg"
-            alt="Сметана и зелень"
-            width={1920}
-            height={1080}
-            className="object-contain w-full h-full"
-          />
+        <SwiperSlide className='flex items-center justify-center h-dvh overflow-hidden'>
+          <div className="flex items-center justify-center w-full">
+            <Image
+              src="/img/slider/chipsOnionSlider.jpg"
+              alt="Сметана и зелень"
+              width={1920}
+              height={1080}
+              className="object-contain w-[1100px] md:w-full max-w-none h-auto"
+            />
+          </div>
         </SwiperSlide>
-
-        <SwiperSlide>
-          <Image
-            src="/img/slider/chipsCrabSlider.jpg"
-            alt="Краб"
-            width={1920}
-            height={1080}
-            className="object-contain w-full h-full"
-          />
+        <SwiperSlide className='flex items-center justify-center h-dvh overflow-hidden'>
+          <div className="flex items-center justify-center w-full">
+            <Image
+              src="/img/slider/chipsCrabSlider.jpg"
+              alt="Краб"
+              width={1920}
+              height={1080}
+              className="object-contain w-[1100px] md:w-full max-w-none h-auto"
+            />
+          </div>
         </SwiperSlide>
 
       </Swiper>
