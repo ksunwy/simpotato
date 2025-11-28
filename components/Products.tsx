@@ -95,7 +95,7 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                         return (
                             <SwiperSlide key={i}>
                                 <div className={`slide ${isActive ? "active" : ""} ${isLeft ? "left" : ""} ${isRight ? "right" : ""}`}>
-                                    <Image src={products[i]} alt={buttons[i]} width={496} height={724} />
+                                    <Image src={products[i]} alt={buttons[i]} width={496} height={724} loading="lazy" />
                                 </div>
                             </SwiperSlide>
                         );

@@ -10,8 +10,8 @@ const Hero = () => {
   // };
 
   return (
-    <div className="relative w-dvw h-dvh">
-      <div className="relative w-full h-dvh">
+    <div className="relative w-dvw h-[100vh]">
+      <div className="relative w-full h-[100vh]">
         <Image
           src="/img/Hero.jpg"
           alt="simpotato"
