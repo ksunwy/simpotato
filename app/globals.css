@@ -292,6 +292,7 @@ html {
   .product-btn {
     border-radius: 8px;
     border-width: 1px;
+    font-size: 13px;
   }
 
   .slide.active img {

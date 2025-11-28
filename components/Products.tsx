@@ -34,7 +34,7 @@ const Products = ({ productsRef }: { productsRef: any }) => {
     };
 
     return (
-        <section ref={productsRef} id="products" className="bg-[#F2F2F2] w-dvw h-fit relative flex flex-col gap-[4.19rem] py-[6.84rem] overflow-hidden">
+        <section ref={productsRef} id="products" className="bg-[#F2F2F2] w-dvw h-fit relative flex flex-col gap-[40px] md:gap-[4.19rem] pt-[50px] pb-[122px] md:py-[6.84rem] overflow-hidden">
             <div className="absolute top-1/2 left-1/2 w-full h-full -translate-y-1/2 -translate-x-1/2">
                 <Image
                     src="/svg/patterns/ProductsPatter.svg"
@@ -85,7 +85,7 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                             slidesPerView: 3,
                         },
                     }}
-                    className="w-full md:h-[70dvh]"
+                    className="w-full md:h-[40dvh] lg:h-[70dvh] 2xl:h-[60dvh]"
                 >
                     {buttons.map((_, i) => {
                         const isActive = i === activeIndex;
@@ -102,10 +102,10 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                     })}
                 </Swiper>
 
-                <button className="custom-prev custom-button absolute left-6 top-1/2 -translate-y-1/2 cursor-pointer z-50 ">
+                <button className="custom-prev custom-button absolute left-6 -bottom-[80px] md:top-1/2 md:-translate-y-1/2 cursor-pointer z-50 ">
                     <CustomPrevButton />
                 </button>
-                <button className="custom-next custom-button absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer z-50 ">
+                <button className="custom-next custom-button absolute right-6 -bottom-[80px] md:top-1/2 md:-translate-y-1/2 cursor-pointer z-50 ">
                     <CustomNextButton />
                 </button>
             </div>

@@ -13,11 +13,11 @@ const About = ({ aboutSectionsRef }: { aboutSectionsRef: any }) => {
             <Image src={"/img/About.png"} alt="simpotato" className="absolute top-[48%] -translate-y-1/2 right-0 hidden md:flex!" width={1080} height={680} />
             <Image src={"/img/AboutMobile.png"} alt="simpotato" className="absolute bottom-0 left-1/2 -translate-x-1/2 flex md:hidden!" width={1080} height={680} />
             <div className="flex flex-col gap-[5.99rem] w-dvw width-restrictions absolute left-1/2 -translate-x-1/2 top-[50px] md:top-1/2 md:-translate-y-1/2">
-                <p className="text-[20px] md:text-[3.76rem] leading-[24px] md:leading-[4.1rem] text-[#FFE29B] font-bold tracking-wide max-w-180 md:max-w-244">
-                    «Чипсы из симпатичной картошки»— это не просто снек,
+                <p className="text-[20px] md:text-[3.76rem] leading-[24px] md:leading-[4.1rem] text-[#FFE29B] font-bold tracking-wide max-w-[244px] md:max-w-244">
+                    «Чипсы из симпатичной картошки» — это не просто снек,
                     а стиль жизни, где вкус, <br /> эстетика и удовольствие сливаются в идеальном хрусте
                 </p>
-                <p className="text-[16px] leading-[18px] md:leading-[3.59rem] md:text-[2.73rem] tracking-wide"><span className="font-bold">SIMPOTATO</span> — это бренд картофельных <br />
+                <p className="text-[16px] leading-[18px] md:leading-[3.59rem] md:text-[2.73rem] tracking-wide max-w-[225px] md:max-w-none"><span className="font-bold">SIMPOTATO</span> — это бренд картофельных <br />
                     чипсов, который превращает обычный снек <br />
                     в искусство наслаждения вкусом, красотой <br />
                     и моментом.
