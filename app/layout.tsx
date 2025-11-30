@@ -77,12 +77,28 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SIMPOTATO",
+    // "url": "https://simpotato.ru",
+    "description": "SIMPOTATO — это бренд картофельных чипсов, который превращает обычный снек в искусство наслаждения вкусом, красотой и моментом.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "109029, город Москва, ул. Средняя Калитниковская, д. 28, стр. 4.",
+      "addressCountry": "РФ"
+    },
+    "email": "help@rockitbrands.ru",
+  }
+
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </body>
     </html>
   );
