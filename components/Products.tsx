@@ -33,6 +33,18 @@ const Products = ({ productsRef }: { productsRef: any }) => {
         }
     };
 
+const handlePrev = () => {
+        const prevIndex = activeIndex === 0 ? buttons.length - 1 : activeIndex - 1;
+        setActiveIndex(prevIndex);
+        goToSlide(prevIndex);
+    };
+
+    const handleNext = () => {
+        const nextIndex = activeIndex === buttons.length - 1 ? 0 : activeIndex + 1;
+        setActiveIndex(nextIndex);
+        goToSlide(nextIndex);
+    };
+
     return (
         <section ref={productsRef} id="products" className="products-section bg-[#F2F2F2] w-dvw h-fit relative flex flex-col gap-[40px] md:gap-[4.19rem] pt-[50px] pb-[122px] md:py-[6.84rem] overflow-hidden">
             <div className="absolute top-1/2 left-1/2 w-full h-full -translate-y-1/2 -translate-x-1/2">
@@ -69,6 +81,7 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                     spaceBetween={20}
                     slidesPerView={3}
                     centeredSlides
+                    slidesPerGroup={1}
                     centerInsufficientSlides
                     speed={900}
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -102,10 +115,10 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                     })}
                 </Swiper>
 
-                <button className="custom-prev custom-button absolute left-6 -bottom-[80px] md:top-1/2 md:-translate-y-1/2 cursor-pointer z-50 ">
+                <button onClick={handlePrev} className="custom-prev custom-button absolute left-6 -bottom-[80px] md:top-1/2 md:-translate-y-1/2 cursor-pointer z-50 ">
                     <CustomPrevButton />
                 </button>
-                <button className="custom-next custom-button absolute right-6 -bottom-[80px] md:top-1/2 md:-translate-y-1/2 cursor-pointer z-50 ">
+                <button onClick={handleNext} className="custom-next custom-button absolute right-6 -bottom-[80px] md:top-1/2 md:-translate-y-1/2 cursor-pointer z-50 ">
                     <CustomNextButton />
                 </button>
             </div>
