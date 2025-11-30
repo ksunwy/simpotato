@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide, SwiperClass } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
 const buttons = ["Тайский перец", "Сметана и зелень", "Сыр", "Краб", "С солью", "Марокканский соус"];
-const buttonColors = ["#ED323C", "#0050A9", "#FDB81C", "#FF808B", "#2AB5AD", "#216437"];
+export const buttonColors = ["#ED323C", "#0050A9", "#FDB81C", "#FF808B", "#2AB5AD", "#216437"];
 const products = ["/img/products/pepper.png", "/img/products/onion.png", "/img/products/cheese.png", "/img/products/crab.png", "/img/products/salt.png", "/img/products/sauce.png"];
 
 const CustomPrevButton = () => (
@@ -34,17 +34,17 @@ const Products = ({ productsRef }: { productsRef: any }) => {
     };
 
     return (
-        <section ref={productsRef} id="products" className="bg-[#F2F2F2] w-dvw h-fit relative flex flex-col gap-[40px] md:gap-[4.19rem] pt-[50px] pb-[122px] md:py-[6.84rem] overflow-hidden">
+        <section ref={productsRef} id="products" className="products-section bg-[#F2F2F2] w-dvw h-fit relative flex flex-col gap-[40px] md:gap-[4.19rem] pt-[50px] pb-[122px] md:py-[6.84rem] overflow-hidden">
             <div className="absolute top-1/2 left-1/2 w-full h-full -translate-y-1/2 -translate-x-1/2">
                 <Image
                     src="/svg/patterns/ProductsPatter.svg"
                     alt="simpotato"
                     fill
-                    className="scale-350"
+                    className="scale-350 products-pattern"
                     priority
                 />
             </div>
-            <div className="relative z-10 flex flex-wrap gap-[1.71rem] w-full width-restrictions">
+            <div className="product-btn-container relative z-10 flex flex-wrap gap-[1.71rem] w-full width-restrictions">
                 {buttons.map((label, index) => (
                     <button
                         key={index}
@@ -63,7 +63,7 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                     </button>
                 ))}
             </div>
-            <div className="flex-1 relative z-10 w-full h-full width-restrictions">
+            <div className="slider flex-1 relative z-10 w-full h-full width-restrictions">
                 <Swiper
                     modules={[Navigation]}
                     spaceBetween={20}
@@ -85,7 +85,7 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                             slidesPerView: 3,
                         },
                     }}
-                    className="w-full md:h-[40dvh] lg:h-[70dvh] 2xl:h-[60dvh]"
+                    className="w-full md:h-[40dvh] lg:h-[70dvh]"
                 >
                     {buttons.map((_, i) => {
                         const isActive = i === activeIndex;

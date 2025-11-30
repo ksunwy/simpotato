@@ -11,7 +11,7 @@ const Gallery = () => {
   const totalSlides = 4;
 
   return (
-    <section className="w-dvw h-fit relative overflow-hidden">
+    <section className="gallery-section w-dvw h-fit relative overflow-hidden">
 
       <div className="pointer-events-none absolute top-0 left-0 w-full h-full flex items-center justify-center">
         <div className="relative width-restrictions w-full h-full">

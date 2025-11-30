@@ -10,25 +10,25 @@ const Important = () => {
 
     const totalSlides = 4;
     return (
-        <section className="w-dvw h-[522px] md:h-dvh bg-linear-to-b from-[#600000] to-[#AC0000] flex items-center justify-center">
+        <section className="important-section w-dvw h-[522px] md:h-dvh bg-linear-to-b from-[#600000] to-[#AC0000] flex items-center justify-center">
             <div className="w-full h-fit width-restrictions hidden md:flex flex-col gap-[13.69rem] text-white">
                 <div className="flex items-center gap-5 justify-between">
-                    <div className="flex items-center gap-[2.99rem]">
-                        <Image src={"/img/important/mission1.png"} alt="Кетчуп" width={201} height={201} className='w-[150px] h-[150px] lg:w-[201px] lg:h-[201px]' />
-                        <div className="flex flex-col gap-[2.99rem]">
-                            <span className="text-[#FFB400] text-[2.56rem] font-bold uppercase">Смакование момента</span>
-                            <p className="text-[1.88rem] leading-[2.22rem] max-w-120"><span className="font-bold">SIMPOTATO</span> — это приглашение
+                    <div className="important-item flex items-center gap-[2.99rem]">
+                        <Image src={"/img/important/mission1.png"} alt="Кетчуп" width={201} height={201} className='important-img w-[150px] h-[150px] lg:w-[201px] lg:h-[201px]' />
+                        <div className="important-text flex flex-col gap-[2.99rem]">
+                            <span className="important-title text-[#FFB400] text-[2.56rem] font-bold uppercase">Смакование момента</span>
+                            <p className="important-desc text-[1.88rem] leading-[2.22rem] max-w-120"><span className="font-bold">SIMPOTATO</span> — это приглашение
                                 замедлиться, насладиться хрустом <br />
                                 и почувствовать радость <br />
                                 от простых вещей
                             </p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-[2.99rem]">
-                        <Image src={"/img/important/mission2.png"} alt="Potato-King" width={201} height={201} className='w-[150px] h-[150px] lg:w-[201px] lg:h-[201px]' />
-                        <div className="flex flex-col gap-[2.99rem]">
-                            <span className="text-[#FFB400] text-[2.56rem] font-bold uppercase">Красота в деталях</span>
-                            <p className="text-[1.88rem] leading-[2.22rem] max-w-120"><span className="font-bold">SIMPOTATO</span> стремится радовать
+                    <div className="important-item flex items-center gap-[2.99rem]">
+                        <Image src={"/img/important/mission2.png"} alt="Potato-King" width={201} height={201} className='important-img w-[150px] h-[150px] lg:w-[201px] lg:h-[201px]' />
+                        <div className="important-text flex flex-col gap-[2.99rem]">
+                            <span className="important-title text-[#FFB400] text-[2.56rem] font-bold uppercase">Красота в деталях</span>
+                            <p className="important-desc text-[1.88rem] leading-[2.22rem] max-w-120"><span className="font-bold">SIMPOTATO</span> стремится радовать
                                 глаз, вызывать эстетическое
                                 удовольствие и вдохновлять
                             </p>
@@ -36,21 +36,21 @@ const Important = () => {
                     </div>
                 </div>
                 <div className="flex items-center gap-5 justify-between">
-                    <div className="flex items-center gap-[2.99rem]">
-                        <Image src={"/img/important/mission3.png"} alt="Перец" width={201} height={201} className='w-[150px] h-[150px] lg:w-[201px] lg:h-[201px]' />
-                        <div className="flex flex-col gap-[2.99rem]">
-                            <span className="text-[#FFB400] text-[2.56rem] font-bold uppercase">Игривость</span>
-                            <p className="text-[1.88rem] leading-[2.22rem] max-w-124"><span className="font-bold">SIMPOTATO</span> — это бренд с улыбкой,
+                    <div className="important-item flex items-center gap-[2.99rem]">
+                        <Image src={"/img/important/mission3.png"} alt="Перец" width={201} height={201} className='important-img w-[150px] h-[150px] lg:w-[201px] lg:h-[201px]' />
+                        <div className="important-text flex flex-col gap-[2.99rem]">
+                            <span className="important-title text-[#FFB400] text-[2.56rem] font-bold uppercase">Игривость</span>
+                            <p className="important-desc text-[1.88rem] leading-[2.22rem] max-w-124"><span className="font-bold">SIMPOTATO</span> — это бренд с улыбкой,
                                 который добавляет легкости <br />
                                 и радости в каждый момент
                             </p>
                         </div>
                     </div>
-                    <div className="flex items-center gap-[2.99rem]">
-                        <Image src={"/img/important/mission4.png"} alt="Smile" width={201} height={201} className='w-[150px] h-[150px] lg:w-[201px] lg:h-[201px]' />
-                        <div className="flex flex-col gap-[2.99rem]">
-                            <span className="text-[#FFB400] text-[2.56rem] font-bold uppercase">Наслаждение вкусом</span>
-                            <p className="text-[1.88rem] leading-[2.22rem] max-w-132">
+                    <div className="important-item flex items-center gap-[2.99rem]">
+                        <Image src={"/img/important/mission4.png"} alt="Smile" width={201} height={201} className='important-img w-[150px] h-[150px] lg:w-[201px] lg:h-[201px]' />
+                        <div className="important-text flex flex-col gap-[2.99rem]">
+                            <span className="important-title text-[#FFB400] text-[2.56rem] font-bold uppercase">Наслаждение вкусом</span>
+                            <p className="important-desc text-[1.88rem] leading-[2.22rem] max-w-132">
                                 Мы создаем чипсы, которые удивляют,
                                 радуют и дарят гастрономическое
                                 удовольствие
@@ -73,7 +73,7 @@ const Important = () => {
                     onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                 >
                     <SwiperSlide>
-                        <div className="w-full h-full flex flex-col gap-[40px] items-center justify-center text-(--white)">
+                        <div className="important-slide-mobile w-full h-full flex flex-col gap-[40px] items-center justify-center text-(--white)">
                             <Image src={"/img/important/mission1.png"} alt='Кетчуп' width={162} height={162} />
                             <div className="flex flex-col gap-[25px] items-center justify-center max-w-[320px]">
                                 <span className='text-[#FFB400] text-center uppercase font-bold text-[25px]'>Смакование момента</span>
@@ -87,7 +87,7 @@ const Important = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="w-full h-full flex flex-col gap-[40px] items-center justify-center text-(--white)">
+                        <div className="important-slide-mobile w-full h-full flex flex-col gap-[40px] items-center justify-center text-(--white)">
                             <Image src={"/img/important/mission2.png"} alt='Potato-King' width={162} height={162} />
                             <div className="flex flex-col gap-[25px] items-center justify-center">
                                 <span className='text-[#FFB400] text-center uppercase font-bold text-[25px]'>Игривость</span>
@@ -100,7 +100,7 @@ const Important = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="w-full h-full flex flex-col gap-[40px] items-center justify-center text-(--white)">
+                        <div className="important-slide-mobile w-full h-full flex flex-col gap-[40px] items-center justify-center text-(--white)">
                             <Image src={"/img/important/mission3.png"} alt='Перец' width={162} height={162} />
                             <div className="flex flex-col gap-[25px] items-center justify-center">
                                 <span className='text-[#FFB400] text-center uppercase font-bold text-[25px]'>Красота в деталях</span>
@@ -113,7 +113,7 @@ const Important = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="w-full h-full flex flex-col gap-[40px] items-center justify-center text-(--white)">
+                        <div className="important-slide-mobile w-full h-full flex flex-col gap-[40px] items-center justify-center text-(--white)">
                             <Image src={"/img/important/mission4.png"} alt='Smile' width={162} height={162} />
                             <div className="flex flex-col gap-[25px] items-center justify-center">
                                 <span className='text-[#FFB400] text-center uppercase font-bold text-[25px]'>Наслаждение вкусом</span>

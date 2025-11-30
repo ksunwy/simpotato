@@ -1,17 +1,10 @@
-'use client';
-
 import Image from "next/image";
 
 const Hero = () => {
 
-  // const handleScroll = () => {
-  //   const scrollPosition = isMobile ? 500 : 1000;
-  //   window.scrollTo(0, scrollPosition);
-  // };
-
   return (
-    <div className="relative w-dvw h-[100vh]">
-      <div className="relative w-full h-[100vh]">
+    <div className="hero relative w-dvw h-[100vh]">
+      <div className="hero-bg relative w-full h-[100vh]">
         <Image
           src="/img/Hero.jpg"
           alt="simpotato"
@@ -28,9 +21,9 @@ const Hero = () => {
         />
 
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-dvw h-dvh width-restrictions">
-          <h1 className="mt-[84px] leading-[32px] md:leading-[5.9rem] md:mt-[16.7rem] text-left text-white font-bold text-[32px] md:text-[5.47rem] tracking-wide">Красота <br /> картошки <br /> в глазах <br /> смотрящего</h1>
+          <h1 className="hero-title opacity-0 mt-[84px] leading-[32px] md:leading-[5.9rem] md:mt-[16.7rem] text-left text-white font-bold text-[32px] md:text-[5.47rem] tracking-wide">Красота <br /> картошки <br /> в глазах <br /> смотрящего</h1>
 
-          <div className="relative ml-auto mt-auto w-fit h-fit py-12 px-16 2xl:py-[2.31rem] 2xl:px-13 hidden md:flex">
+          <div className="hero-card opacity-0 relative ml-auto mt-auto w-fit h-fit py-12 px-16 2xl:py-[2.31rem] 2xl:px-13 hidden md:flex">
             <svg
               className="absolute top-0 left-0 z-1 scale-90 2xl:scale-100"
               width="394"
@@ -51,7 +44,7 @@ const Hero = () => {
               alt="heart-potato"
               width={111}
               height={96}
-              className="absolute -bottom-24 lg:-bottom-14 2xl:-bottom-8 -right-5 z-3 w-[80px] h-[70px] 2xl:w-[111px] 2xl:h-[96px]"
+              className="hero-heart absolute -bottom-24 lg:-bottom-14 2xl:-bottom-8 -right-5 z-3 w-[80px] h-[70px] 2xl:w-[111px] 2xl:h-[96px]"
             />
           </div>
 
