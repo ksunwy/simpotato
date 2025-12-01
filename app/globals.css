@@ -229,6 +229,23 @@ html {
   max-width: min(1472px, 100% - 2rem);
 }
 
+
+@media (max-width: 768px) {
+  .hero-title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpMobile 1.2s ease-out forwards;
+  }
+
+  @keyframes fadeInUpMobile {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      animation-delay: .8s;
+    }
+  }
+}
+
 @import "tailwindcss";
 
 

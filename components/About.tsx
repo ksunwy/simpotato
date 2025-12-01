@@ -92,3 +92,6 @@ const About = ({ aboutSectionsRef }: { aboutSectionsRef: any }) => {
 }
 
 export default About
+
+
+
