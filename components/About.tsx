@@ -81,7 +81,7 @@ const About = ({ aboutSectionsRef }: { aboutSectionsRef: any }) => {
                     «Чипсы из симпатичной картошки» — это не просто снек,
                     а стиль жизни, где вкус, <br /> эстетика и удовольствие сливаются в идеальном хрусте
                 </p>
-                <p className="about-subtitle text-[16px] leading-[18px] md:leading-[3.59rem] md:text-[2.73rem] tracking-wide max-w-[300px] md:max-w-none"><span className="font-bold">SIMPOTATO</span> — это бренд картофельных <br />
+                <p className="about-subtitle text-[16px] leading-[18px] md:leading-[3.59rem] md:text-[2.73rem] tracking-wide max-w-[300px] md:max-w-220"><span className="font-bold">SIMPOTATO</span> — это бренд картофельных <br />
                     чипсов, который превращает обычный снек 
                     в искусство наслаждения вкусом, красотой 
                     и моментом.
