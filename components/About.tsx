@@ -77,13 +77,13 @@ const About = ({ aboutSectionsRef }: { aboutSectionsRef: any }) => {
                 </div>
             </div>
             <div className="about-text-wrapper flex flex-col gap-[5.99rem] w-dvw width-restrictions absolute left-1/2 -translate-x-1/2 top-[50px] md:top-1/2 md:-translate-y-1/2">
-                <p className="about-title text-[20px] md:text-[3.76rem] leading-[24px] md:leading-[4.1rem] text-[#FFE29B] font-bold tracking-wide max-w-[244px] md:max-w-244">
+                <p className="about-title text-[20px] md:text-[3.76rem] leading-[24px] md:leading-[4.1rem] text-[#FFE29B] font-bold tracking-wide max-w-[320px] md:max-w-244">
                     «Чипсы из симпатичной картошки» — это не просто снек,
                     а стиль жизни, где вкус, <br /> эстетика и удовольствие сливаются в идеальном хрусте
                 </p>
-                <p className="about-subtitle text-[16px] leading-[18px] md:leading-[3.59rem] md:text-[2.73rem] tracking-wide max-w-[225px] md:max-w-none"><span className="font-bold">SIMPOTATO</span> — это бренд картофельных <br />
-                    чипсов, который превращает обычный снек <br />
-                    в искусство наслаждения вкусом, красотой <br />
+                <p className="about-subtitle text-[16px] leading-[18px] md:leading-[3.59rem] md:text-[2.73rem] tracking-wide max-w-[300px] md:max-w-none"><span className="font-bold">SIMPOTATO</span> — это бренд картофельных <br />
+                    чипсов, который превращает обычный снек 
+                    в искусство наслаждения вкусом, красотой 
                     и моментом.
                 </p>
             </div>

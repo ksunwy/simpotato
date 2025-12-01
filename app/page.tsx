@@ -113,7 +113,6 @@ export default function Home() {
       gsap.to(".footer-pattern", { y: -80, ease: "none", scrollTrigger: { trigger: ".footer", start: "top bottom", end: "bottom bottom", scrub: 1.2, }, });
 
     }
-    console.log(isMobile);
     
   }, [isMobile, isClientReady]);
 
