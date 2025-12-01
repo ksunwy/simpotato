@@ -4,7 +4,7 @@ const Hero = () => {
 
   return (
     <div className="hero relative w-dvw max-h-[100vh] h-[100vh] overflow-hidden">
-      <div className="hero-bg relative w-full max-h-[100vh] h-[100vh]">
+      <div className="hero-bg relative w-full h-[667px] sm:h-[800px] md:h-[100vh]">
         <Image
           src="/img/Hero.jpg"
           alt="simpotato"
