@@ -74,20 +74,20 @@ export default function Home() {
       gsap.fromTo(".hero-title", { opacity: 0, y: 40, duration: 1.2, delay: 0.3, ease: "power3.out", }, { opacity: 1, y: 0, duration: 1.2, delay: 0.3, ease: "power3.out", });
       gsap.fromTo(".hero-card", { opacity: 0, y: 30, duration: 1.2, delay: 0.6, ease: "power2.out", }, { opacity: 1, y: 0, duration: 1.2, delay: 0.6, ease: "power2.out", });
       gsap.from(".hero-heart", { opacity: 0, scale: 0.55, rotation: -12, duration: 0.9, delay: 0.9, ease: "back.out(2)", });
-      gsap.to(".hero", { opacity: 0, scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true, }, });
-      gsap.to(".hero-bg", { scale: 1.05, scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true, }, });
-
+      
       gsap.from(".about-title", { opacity: 0, y: 40, duration: 1.3, ease: "power3.out", scrollTrigger: { trigger: ".about-section", start: "top 70%", }, });
       gsap.from(".about-subtitle", { opacity: 0, y: 40, duration: 1.3, delay: 0.2, ease: "power3.out", scrollTrigger: { trigger: ".about-section", start: "top 65%", }, });
       gsap.from(".about-image", { opacity: 0, duration: 1.4, ease: "power3.out", scrollTrigger: { trigger: ".about-section", start: "top 70%", }, });
       gsap.from(".about-image-mobile", { opacity: 0, y: 60, duration: 1.4, ease: "power3.out", scrollTrigger: { trigger: ".about-section", start: "top 75%", }, });
-
+      
       gsap.from(".product-btn", { opacity: 0, y: 20, duration: 1, ease: "power3.out", scrollTrigger: { trigger: ".products-section", start: "top 75%", }, });
       gsap.from(".slider", { opacity: 0, y: 40, duration: 1.8, ease: "power3.out", scrollTrigger: { trigger: ".products-section", start: "top 65%", }, });
       gsap.from(".products-pattern", { scale: 2.6, duration: 2, ease: "power3.out", scrollTrigger: { trigger: ".products-section", start: "top 80%", }, });
       gsap.to(".products-section", { opacity: 0, delay: 2, scrollTrigger: { trigger: ".products-section", start: "top top", end: "bottom top", scrub: true, }, });
     }
-    
+    gsap.to(".hero", { opacity: 0, scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true, }, });
+    gsap.to(".hero-bg", { scale: 1.05, scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true, }, });
+
     gsap.from(".mission-title", { opacity: 0, y: 40, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: ".mission-section", start: "top 75%", }, });
     gsap.from(".mission-subtitle", { opacity: 0, y: 35, filter: "blur(8px)", duration: 1.3, ease: "power3.out", scrollTrigger: { trigger: ".mission-section", start: "top 72%", }, });
     gsap.from(".mission-item", { opacity: 0, y: 50, rotateX: -15, scale: 0.9, duration: 1.2, stagger: 0.2, ease: "power3.out", scrollTrigger: { trigger: ".mission-section", start: "top 70%", }, });
