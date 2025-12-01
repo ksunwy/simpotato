@@ -86,7 +86,6 @@ export default function Home() {
       gsap.to(".products-section", { opacity: 0, delay: 2, scrollTrigger: { trigger: ".products-section", start: "top top", end: "bottom top", scrub: true, }, });
     }
     gsap.to(".hero", { opacity: 0, scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true, }, });
-    gsap.to(".hero-bg", { scale: 1.05, scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true, }, });
 
     gsap.from(".mission-title", { opacity: 0, y: 40, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: ".mission-section", start: "top 75%", }, });
     gsap.from(".mission-subtitle", { opacity: 0, y: 35, filter: "blur(8px)", duration: 1.3, ease: "power3.out", scrollTrigger: { trigger: ".mission-section", start: "top 72%", }, });
