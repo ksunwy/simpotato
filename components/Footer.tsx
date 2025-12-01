@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const Footer = ({ footerRef }: { footerRef: any }) => {
   return (
-    <footer ref={footerRef} id="footer" className="footer relative w-full h-fit md:h-[52.82rem] bg-blue flex flex-col gap-[60px] md:gap-[9.16rem] py-[50px] md:py-[6.84rem] text-white bg-(--blue) overflow-hidden">
+    <footer ref={footerRef} id="footer" className="footer overflow-hidden relative w-full h-fit md:h-[52.82rem] bg-blue flex flex-col gap-[60px] md:gap-[9.16rem] py-[50px] md:py-[6.84rem] text-white bg-(--blue) overflow-hidden">
       <div className="footer-logo-wrapper w-full relative width-restrictions">
         <img src="/svg/LogoLightRu.svg" alt="SIMPOTATO" className="footer-logo w-full h-auto md:h-[19.77rem]" />
       </div>

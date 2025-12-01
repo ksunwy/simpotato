@@ -1,14 +1,14 @@
 
-const SliderButtons = ({prev, next, activeIndex, totalSlides}: {prev: string, next: string, activeIndex: number, totalSlides: number}) => {
+const SliderButtons = ({prev, next, activeIndex, totalSlides, nodisable}: {prev: string, next: string, activeIndex: number, totalSlides: number, nodisable?: boolean}) => {
   return (
     <>
          <button
             className={`
               pointer-events-auto ${prev} absolute left-6 top-1/2 -translate-y-1/2 z-20
               transition-opacity duration-300
-              ${activeIndex === 0 ? "opacity-40 cursor-default" : "opacity-100 cursor-pointer"}
+              ${nodisable ? "" : activeIndex === 0 ? "opacity-40 cursor-default" : "opacity-100 cursor-pointer"}
             `}
-            disabled={activeIndex === 0}
+            disabled={nodisable ? false : activeIndex === 0}
           >
             <svg width="28" height="51" viewBox="0 0 28 51" fill="none">
               <g clipPath="url(#clip0)">
@@ -37,9 +37,9 @@ const SliderButtons = ({prev, next, activeIndex, totalSlides}: {prev: string, ne
             className={`
               pointer-events-auto ${next} absolute right-6 top-1/2 -translate-y-1/2 z-20 rotate-180
               transition-opacity duration-300
-              ${activeIndex === totalSlides - 1 ? "opacity-40 cursor-default" : "opacity-100 cursor-pointer"}
+              ${nodisable ? "" : activeIndex === totalSlides - 1 ? "opacity-40 cursor-default" : "opacity-100 cursor-pointer"}
             `}
-            disabled={activeIndex === totalSlides - 1}
+            disabled={nodisable ? false : activeIndex === totalSlides - 1}
           >
             <svg width="28" height="51" viewBox="0 0 28 51" fill="none">
               <g clipPath="url(#clip0)">

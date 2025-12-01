@@ -15,7 +15,7 @@ const Gallery = () => {
 
       <div className="pointer-events-none absolute top-0 left-0 w-full h-full flex items-center justify-center">
         <div className="relative width-restrictions w-full h-full">
-          <SliderButtons prev="custom-prev" next="custom-next" activeIndex={activeIndex} totalSlides={totalSlides} />
+          <SliderButtons nodisable prev="custom-prev" next="custom-next" activeIndex={activeIndex} totalSlides={totalSlides} />
         </div>
       </div>
 
@@ -27,6 +27,7 @@ const Gallery = () => {
           nextEl: ".custom-next",
         }}
         speed={500}
+        loop
         className="w-full h-full"
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}

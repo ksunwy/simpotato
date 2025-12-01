@@ -9,7 +9,7 @@ const items = [
 
 const Mission = () => {
   return (
-    <section className="mission-section relative w-dvw h-fit md:min-h-dvh width-restrictions py-[50px] md:py-[12.84rem] flex flex-col justify-center gap-[7.7rem]">
+    <section className="mission-section overflow-hidden relative w-dvw h-fit md:min-h-dvh width-restrictions py-[50px] md:py-[12.84rem] flex flex-col justify-center gap-[7.7rem]">
       <div className="flex flex-col gap-[20px] md:gap-[2.56rem]">
         <span className="mission-subtitle text-[16px] md:text-[2.05rem]">Миссия бренда</span>
         <h2 className="mission-title text-(--blue) font-bold text-[33px] md:text-[5.47rem] leading-[32px] md:leading-[5.9rem] uppercase">Превращать каждый момент <br /> в маленькое удовольствие</h2>

@@ -23,17 +23,22 @@ const Products = ({ productsRef }: { productsRef: any }) => {
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const swiperRef = useRef<SwiperClass | null>(null);
 
+    const normalizeIndex = (index: number) => {
+        const total = buttons.length;
+        return ((index % total) + total) % total;
+    };
+
     const handleSlideChange = (swiper: SwiperClass) => {
-        setActiveIndex(swiper.realIndex);
+        const normalized = normalizeIndex(swiper.realIndex);
+        setActiveIndex(normalized);
     };
 
     const goToSlide = (index: number) => {
         if (swiperRef.current) {
-            swiperRef.current.slideTo(index);
+            swiperRef.current.slideToLoop(index);
         }
     };
-
-const handlePrev = () => {
+    const handlePrev = () => {
         const prevIndex = activeIndex === 0 ? buttons.length - 1 : activeIndex - 1;
         setActiveIndex(prevIndex);
         goToSlide(prevIndex);
@@ -46,7 +51,7 @@ const handlePrev = () => {
     };
 
     return (
-        <section ref={productsRef} id="products" className="products-section bg-[#F2F2F2] w-dvw h-fit relative flex flex-col gap-[40px] md:gap-[4.19rem] pt-[50px] pb-[122px] md:py-[6.84rem] overflow-hidden">
+        <section ref={productsRef} id="products" className="products-section overflow-hidden bg-[#F2F2F2] w-dvw h-fit relative flex flex-col gap-[40px] md:gap-[4.19rem] pt-[50px] pb-[122px] md:py-[6.84rem] overflow-hidden">
             <div className="absolute top-1/2 left-1/2 w-full h-full -translate-y-1/2 -translate-x-1/2">
                 <Image
                     src="/svg/patterns/ProductsPatter.svg"
@@ -56,7 +61,7 @@ const handlePrev = () => {
                     priority
                 />
             </div>
-            <div className="product-btn-container relative z-10 flex flex-wrap gap-[1.71rem] w-full width-restrictions">
+            <div className="product-btn-container relative z-10 flex flex-wrap md:justify-center gap-[1.71rem] w-full width-restrictions">
                 {buttons.map((label, index) => (
                     <button
                         key={index}
@@ -82,7 +87,7 @@ const handlePrev = () => {
                     slidesPerView={3}
                     centeredSlides
                     slidesPerGroup={1}
-                    centerInsufficientSlides
+                    loop
                     speed={900}
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
                     onSlideChange={handleSlideChange}
@@ -114,13 +119,13 @@ const handlePrev = () => {
                         );
                     })}
                 </Swiper>
-
+                {/* 
                 <button onClick={handlePrev} className="custom-prev custom-button absolute left-6 -bottom-[80px] md:top-1/2 md:-translate-y-1/2 cursor-pointer z-50 ">
                     <CustomPrevButton />
                 </button>
-                <button onClick={handleNext} className="custom-next custom-button absolute right-6 -bottom-[80px] md:top-1/2 md:-translate-y-1/2 cursor-pointer z-50 ">
+                <button onClick={handlePrev} className="custom-next custom-button absolute right-6 -bottom-[80px] md:top-1/2 md:-translate-y-1/2 cursor-pointer z-50 ">
                     <CustomNextButton />
-                </button>
+                </button> */}
             </div>
         </section>
     )

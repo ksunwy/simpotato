@@ -53,7 +53,7 @@ const About = ({ aboutSectionsRef }: { aboutSectionsRef: any }) => {
     }, []);
 
     return (
-        <section ref={aboutSectionsRef} id="about" className="about-section relative w-dvw h-[621px] md:h-[80.9rem] bg-linear-to-b md:bg-linear-to-r from-[#610000] to-[#9C0000] md:via-[80.89%] text-white overflow-hidden">
+        <section ref={aboutSectionsRef} id="about" className="about-section overflow-hidden relative w-dvw h-[621px] md:h-[80.9rem] bg-linear-to-b md:bg-linear-to-r from-[#610000] to-[#9C0000] md:via-[80.89%] text-white overflow-hidden">
             <svg className="about-bg-ellipse hidden md:flex! absolute top-1/2 -translate-y-1/2 -right-25" width="796" height="945" viewBox="0 0 796 945" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <ellipse cx="613" cy="473" rx="613" ry="705" fill="#5F0000" />
             </svg>

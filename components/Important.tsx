@@ -10,7 +10,7 @@ const Important = () => {
 
     const totalSlides = 4;
     return (
-        <section className="important-section w-dvw h-[522px] md:h-dvh bg-linear-to-b from-[#600000] to-[#AC0000] flex items-center justify-center">
+        <section className="important-section overflow-hidden w-dvw h-[522px] md:h-dvh bg-linear-to-b from-[#600000] to-[#AC0000] flex items-center justify-center">
             <div className="w-full h-fit width-restrictions hidden md:flex flex-col gap-[13.69rem] text-white">
                 <div className="flex items-center gap-5 justify-between">
                     <div className="important-item flex items-center gap-[2.99rem]">
