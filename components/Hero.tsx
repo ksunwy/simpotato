@@ -16,7 +16,7 @@ const Hero = () => {
           src="/img/HeroMobile.jpg"
           alt="simpotato"
           fill
-          className="object-cover mt-20 flex md:hidden!"
+          className="object-cover mt-20 flex md:hidden! h-[667px] sm:h-[800px]"
           priority
         />
 

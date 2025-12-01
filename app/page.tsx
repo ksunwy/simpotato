@@ -106,7 +106,7 @@ export default function Home() {
     gsap.to(".gallery-section", { opacity: 0, delay: 2, duration: 1.4, scrollTrigger: { trigger: ".gallery-section", start: "top top", end: "bottom top", scrub: true, }, });
 
     gsap.from(".where-title", { opacity: 0, y: 30, duration: 1.1, ease: "power3.out", scrollTrigger: { trigger: ".where-title", start: "top 85%", }, });
-    gsap.from(".where-card", { opacity: 0, y: 40, scale: 0.9, duration: 0.9, ease: "power2.out", scrollTrigger: { trigger: ".wherebuy", start: "top 70%", }, });
+    gsap.from(".where-card", { opacity: 0, y: 40, duration: 0.9, ease: "power2.out", scrollTrigger: { trigger: ".wherebuy", start: "top 70%", }, });
 
     gsap.from(".footer", { opacity: 0, y: 60, duration: 1.3, ease: "power3.out", scrollTrigger: { trigger: ".footer", start: "top 85%", }, });
     gsap.from(".footer-logo", { opacity: 0, scale: 0.8, duration: 1.1, ease: "power2.out", scrollTrigger: { trigger: ".footer-logo", start: "top 90%", }, });
