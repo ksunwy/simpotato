@@ -16,12 +16,12 @@ const Hero = () => {
           src="/img/HeroMobile.jpg"
           alt="simpotato"
           fill
-          className="object-cover mt-20 flex md:hidden! h-[667px] sm:h-[800px]"
+          className="object-cover mt-10 flex md:hidden! h-[667px] sm:h-[800px]"
           priority
         />
 
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-dvw h-dvh width-restrictions">
-          <h1 className="hero-title md:opacity-0 mt-[84px] leading-[32px] md:leading-[5.9rem] md:mt-[16.7rem] text-left text-white font-bold text-[32px] md:text-[5.47rem] tracking-wide">Красота <br /> картошки <br /> в глазах <br /> смотрящего</h1>
+          <h1 className="hero-title md:opacity-0 mt-[84px] leading-[32px] md:leading-[5.9rem] md:mt-[16.7rem] text-left text-white font-bold text-[32px] md:text-[5.47rem] tracking-wide">Красота <br className="md:flex hidden" /> картошки <br /> в глазах <br className="md:flex hidden" /> смотрящего</h1>
 
           <div className="hero-card opacity-0 relative ml-auto mt-auto w-fit h-fit py-12 px-16 2xl:py-[2.31rem] 2xl:px-13 hidden md:flex">
             <svg

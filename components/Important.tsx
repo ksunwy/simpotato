@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide, SwiperClass } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import { useState, useRef } from 'react';
 import SliderButtons from './SliderButtons';
@@ -10,7 +10,7 @@ const Important = () => {
 
     const totalSlides = 4;
     return (
-        <section className="important-section overflow-hidden w-dvw h-[522px] md:h-dvh bg-linear-to-b from-[#600000] to-[#AC0000] flex items-center justify-center">
+        <section className="important-section relative overflow-hidden w-dvw h-[522px] md:h-dvh bg-linear-to-b from-[#600000] to-[#AC0000] flex items-center justify-center">
             <div className="w-full h-fit width-restrictions hidden md:flex flex-col gap-[13.69rem] text-white">
                 <div className="flex items-center gap-5 justify-between">
                     <div className="important-item flex items-center gap-[2.99rem]">
@@ -61,11 +61,20 @@ const Important = () => {
             </div>
             <div className="flex md:hidden relative w-full width-restrictions">
                 <Swiper
-                    modules={[Navigation]}
+                    modules={[Navigation, Pagination]}
                     slidesPerView={1}
                     navigation={{
                         prevEl: ".custom-prev-important",
                         nextEl: ".custom-next-important",
+                    }}
+                       pagination={{
+                        clickable: true,
+                        el: ".custom-pagination-important",
+                        bulletClass: "custom-bullet",
+                        bulletActiveClass: "custom-bullet-active",
+                        renderBullet: (index, className) => {
+                            return `<span class="${className} inline-block w-[8px] h-[8px] rounded-full transition-all duration-300"></span>`;
+                        },
                     }}
                     speed={500}
                     className="w-full h-full"
@@ -75,7 +84,7 @@ const Important = () => {
                     <SwiperSlide>
                         <div className="important-slide-mobile w-full h-full flex flex-col gap-[40px] items-center justify-center text-(--white)">
                             <Image src={"/img/important/mission1.png"} alt='Кетчуп' width={162} height={162} />
-                            <div className="flex flex-col gap-[25px] items-center justify-center max-w-[320px]">
+                            <div className="flex flex-col gap-[25px] items-center justify-center w-[320px]">
                                 <span className='text-[#FFB400] text-center uppercase font-bold text-[25px]'>Смакование момента</span>
                                 <p className='text-center text-[18px]'>
                                     <span className='font-bold'>SIMPOTATO </span> — это приглашение
@@ -89,7 +98,7 @@ const Important = () => {
                     <SwiperSlide>
                         <div className="important-slide-mobile w-full h-full flex flex-col gap-[40px] items-center justify-center text-(--white)">
                             <Image src={"/img/important/mission2.png"} alt='Potato-King' width={162} height={162} />
-                            <div className="flex flex-col gap-[25px] items-center justify-center">
+                            <div className="flex flex-col gap-[25px] items-center justify-center w-[320px]">
                                 <span className='text-[#FFB400] text-center uppercase font-bold text-[25px]'>Игривость</span>
                                 <p className='text-center text-[18px]'>
                                     <span className='font-bold'>SIMPOTATO </span> — это бренд с улыбкой, <br />
@@ -102,7 +111,7 @@ const Important = () => {
                     <SwiperSlide>
                         <div className="important-slide-mobile w-full h-full flex flex-col gap-[40px] items-center justify-center text-(--white)">
                             <Image src={"/img/important/mission3.png"} alt='Перец' width={162} height={162} />
-                            <div className="flex flex-col gap-[25px] items-center justify-center">
+                            <div className="flex flex-col gap-[25px] items-center justify-center w-[320px]">
                                 <span className='text-[#FFB400] text-center uppercase font-bold text-[25px]'>Красота в деталях</span>
                                 <p className='text-center text-[18px]'>
                                     <span className='font-bold'>SIMPOTATO </span> стремится радовать <br />
@@ -115,7 +124,7 @@ const Important = () => {
                     <SwiperSlide>
                         <div className="important-slide-mobile w-full h-full flex flex-col gap-[40px] items-center justify-center text-(--white)">
                             <Image src={"/img/important/mission4.png"} alt='Smile' width={162} height={162} />
-                            <div className="flex flex-col gap-[25px] items-center justify-center">
+                            <div className="flex flex-col gap-[25px] items-center justify-center w-[320px]">
                                 <span className='text-[#FFB400] text-center uppercase font-bold text-[25px]'>Наслаждение вкусом</span>
                                 <p className='text-center text-[18px]'>
                                     Мы создаем чипсы, которые удивляют, <br />
@@ -126,9 +135,9 @@ const Important = () => {
                         </div>
                     </SwiperSlide>
                 </Swiper>
-
-                <SliderButtons prev="custom-prev-important" next="custom-next-important" activeIndex={activeIndex} totalSlides={totalSlides} />
+                {/* <SliderButtons prev="custom-prev-important" next="custom-next-important" activeIndex={activeIndex} totalSlides={totalSlides} /> */}
             </div>
+            <div className="custom-pagination-important flex justify-center items-center gap-4 absolute -left-1/2 bottom-[30px]!" />
         </section>
     )
 }

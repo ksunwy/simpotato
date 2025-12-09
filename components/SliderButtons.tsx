@@ -10,11 +10,11 @@ const SliderButtons = ({prev, next, activeIndex, totalSlides, nodisable}: {prev:
             `}
             disabled={nodisable ? false : activeIndex === 0}
           >
-            <svg width="28" height="51" viewBox="0 0 28 51" fill="none">
+            <svg className="scale-60 md:scale-100" width="28" height="51" viewBox="0 0 28 51" fill="none">
               <g clipPath="url(#clip0)">
                 <path
                   d="M25.2236 2.99628L2.57658 25.6433L25.2236 48.2904"
-                  stroke="#FFFCF4"
+                  stroke="#FFFCF4" 
                   strokeWidth="4.462"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -41,7 +41,7 @@ const SliderButtons = ({prev, next, activeIndex, totalSlides, nodisable}: {prev:
             `}
             disabled={nodisable ? false : activeIndex === totalSlides - 1}
           >
-            <svg width="28" height="51" viewBox="0 0 28 51" fill="none">
+            <svg className="scale-60 md:scale-100" width="28" height="51" viewBox="0 0 28 51" fill="none">
               <g clipPath="url(#clip0)">
                 <path
                   d="M25.2236 2.99628L2.57658 25.6433L25.2236 48.2904"
