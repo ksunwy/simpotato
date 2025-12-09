@@ -2,26 +2,18 @@ import Image from "next/image"
 import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide, SwiperClass } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import useWidth from "@/hooks/useWidth";
 
+const initialSlideImage = "/img/slider/allProducts.png";
 const buttons = ["Тайский перец", "Сметана и зелень", "Сыр", "Краб", "С солью", "Марокканский соус"];
 export const buttonColors = ["#ED323C", "#0050A9", "#FDB81C", "#FF808B", "#2AB5AD", "#216437"];
 const products = ["/img/products/pepper.png", "/img/products/onion.png", "/img/products/cheese.png", "/img/products/crab.png", "/img/products/salt.png", "/img/products/sauce.png"];
 
-const CustomPrevButton = () => (
-    <svg width="26" height="48" viewBox="0 0 26 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M23.8975 1.25L1.2504 23.8971L23.8975 46.5441" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-);
-
-const CustomNextButton = () => (
-    <svg width="26" height="48" viewBox="0 0 26 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1.25 1.25L23.8971 23.8971L1.25 46.5441" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-);
-
 const Products = ({ productsRef }: { productsRef: any }) => {
-    const [activeIndex, setActiveIndex] = useState<number>(0);
+    const [activeIndex, setActiveIndex] = useState<number>(-1);
+    const {isMobile} = useWidth();
     const swiperRef = useRef<SwiperClass | null>(null);
+    const firstLoad = useRef(true);
 
     const normalizeIndex = (index: number) => {
         const total = buttons.length;
@@ -29,29 +21,36 @@ const Products = ({ productsRef }: { productsRef: any }) => {
     };
 
     const handleSlideChange = (swiper: SwiperClass) => {
-        const normalized = normalizeIndex(swiper.realIndex);
+        if (firstLoad.current) {
+            firstLoad.current = false;
+            setActiveIndex(-1);
+            return;
+        }
+
+        if (swiper.realIndex === 0) {
+            setActiveIndex(-1);
+            return;
+        }
+
+        const normalized = normalizeIndex(swiper.realIndex - 1);
         setActiveIndex(normalized);
     };
 
     const goToSlide = (index: number) => {
         if (swiperRef.current) {
-            swiperRef.current.slideToLoop(index);
+            swiperRef.current.slideToLoop(index + 1);
         }
     };
-    const handlePrev = () => {
-        const prevIndex = activeIndex === 0 ? buttons.length - 1 : activeIndex - 1;
-        setActiveIndex(prevIndex);
-        goToSlide(prevIndex);
-    };
 
-    const handleNext = () => {
-        const nextIndex = activeIndex === buttons.length - 1 ? 0 : activeIndex + 1;
-        setActiveIndex(nextIndex);
-        goToSlide(nextIndex);
-    };
+    const showingInitial = activeIndex === -1;
+    const slidesPerView = showingInitial ? 1 : isMobile ? 1 : 3;
 
     return (
-        <section ref={productsRef} id="products" className="products-section overflow-hidden bg-[#F2F2F2] w-dvw h-fit relative flex flex-col gap-[40px] md:gap-[4.19rem] pt-[50px] pb-[122px] md:py-[6.84rem] overflow-hidden">
+        <section
+            ref={productsRef}
+            id="products"
+            className="products-section overflow-hidden bg-[#F2F2F2] w-dvw h-fit relative flex flex-col gap-[40px] md:gap-[4.19rem] pt-[50px] pb-[122px] md:py-[6.84rem]"
+        >
             <div className="absolute top-1/2 left-1/2 w-full h-full -translate-y-1/2 -translate-x-1/2">
                 <Image
                     src="/svg/patterns/ProductsPatter.svg"
@@ -61,6 +60,7 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                     priority
                 />
             </div>
+
             <div className="product-btn-container relative z-10 flex flex-wrap md:justify-center gap-[1.71rem] w-full width-restrictions">
                 {buttons.map((label, index) => (
                     <button
@@ -80,35 +80,44 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                     </button>
                 ))}
             </div>
+            {activeIndex !== -1 && <h3 style={{ color: buttonColors[activeIndex] }} className={`absolute bottom-14 left-1/2 -translate-x-1/2 text-[${buttonColors[activeIndex]}] text-nowrap font-medium md:text-5xl text-7xl`}>«{buttons[activeIndex]}»</h3>}
             <div className="slider flex-1 relative z-10 w-full h-full width-restrictions">
                 <Swiper
                     modules={[Navigation]}
                     spaceBetween={20}
-                    slidesPerView={3}
+                    slidesPerView={slidesPerView}
                     centeredSlides
                     slidesPerGroup={1}
                     loop
                     speed={900}
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
                     onSlideChange={handleSlideChange}
-                    navigation={{
-                        prevEl: ".custom-prev",
-                        nextEl: ".custom-next",
-                    }}
-                    breakpoints={{
-                        0: {
-                            slidesPerView: 1,
-                        },
-                        768: {
-                            slidesPerView: 3,
-                        },
-                    }}
+                    navigation={{ prevEl: ".custom-prev", nextEl: ".custom-next" }}
                     className="w-full md:h-[40dvh] lg:h-[70dvh]"
                 >
+
+                    <SwiperSlide key="first">
+                        <div className={`slide ${showingInitial ? "active" : ""}`}>
+                            <Image
+                                src={initialSlideImage}
+                                alt="All products"
+                                width={1471}
+                                height={870.53}
+                                className="2xl:scale-250 xl:scale-200 md:scale-150 scale-100 xl:mb-40 md:mb-10 md:pt-0 pt-40"
+                            />
+                        </div>
+                    </SwiperSlide>
+
                     {buttons.map((_, i) => {
-                        const isActive = i === activeIndex;
-                        const isLeft = i === activeIndex - 1 || (activeIndex === 0 && i === buttons.length - 1);
-                        const isRight = i === activeIndex + 1 || (activeIndex === buttons.length - 1 && i === 0);
+                        let isActive = activeIndex === i;
+                        let isLeft = i === activeIndex - 1 || (activeIndex === 0 && i === buttons.length - 1);
+                        let isRight = i === activeIndex + 1 || (activeIndex === buttons.length - 1 && i === 0);
+
+                        if (showingInitial) {
+                            isActive = false;
+                            isLeft = false;
+                            isRight = false;
+                        }
 
                         return (
                             <SwiperSlide key={i}>
@@ -118,17 +127,12 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                             </SwiperSlide>
                         );
                     })}
+
                 </Swiper>
-                {/* 
-                <button onClick={handlePrev} className="custom-prev custom-button absolute left-6 -bottom-[80px] md:top-1/2 md:-translate-y-1/2 cursor-pointer z-50 ">
-                    <CustomPrevButton />
-                </button>
-                <button onClick={handlePrev} className="custom-next custom-button absolute right-6 -bottom-[80px] md:top-1/2 md:-translate-y-1/2 cursor-pointer z-50 ">
-                    <CustomNextButton />
-                </button> */}
+
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Products
+export default Products;

@@ -86,10 +86,10 @@ export default function Home() {
       gsap.to(".products-section", { opacity: 0, delay: 2, scrollTrigger: { trigger: ".products-section", start: "top top", end: "bottom top", scrub: true, }, });
     }
     gsap.to(".hero", { opacity: 0, scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true, }, });
-
+    
     gsap.from(".mission-title", { opacity: 0, y: 40, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: ".mission-section", start: "top 75%", }, });
-    gsap.from(".mission-subtitle", { opacity: 0, y: 35, filter: "blur(8px)", duration: 1.3, ease: "power3.out", scrollTrigger: { trigger: ".mission-section", start: "top 72%", }, });
     gsap.from(".mission-item", { opacity: 0, y: 50, rotateX: -15, scale: 0.9, duration: 1.2, stagger: 0.2, ease: "power3.out", scrollTrigger: { trigger: ".mission-section", start: "top 70%", }, });
+    gsap.from(".mission-subtitle", { opacity: 0, y: 35, filter: "blur(8px)", duration: 1.3, ease: "power3.out", scrollTrigger: { trigger: ".mission-section", start: "top 72%", }, });
     gsap.from(".mission-king", { opacity: 0, x: 40, y: 10, scale: 0.85, duration: 1.2, ease: "back.out(2)", scrollTrigger: { trigger: ".mission-section", start: "top 60%", }, });
     gsap.to(".mission-section", { scale: 1.02, scrollTrigger: { trigger: ".mission-section", start: "top bottom", end: "bottom top", scrub: true, }, });
 
@@ -106,7 +106,6 @@ export default function Home() {
     gsap.to(".gallery-section", { opacity: 0, delay: 2, duration: 1.4, scrollTrigger: { trigger: ".gallery-section", start: "top top", end: "bottom top", scrub: true, }, });
 
     gsap.from(".where-title", { opacity: 0, y: 30, duration: 1.1, ease: "power3.out", scrollTrigger: { trigger: ".where-title", start: "top 85%", }, });
-    gsap.from(".where-card", { opacity: 0, y: 40, duration: 0.9, ease: "power2.out", scrollTrigger: { trigger: ".wherebuy", start: "top 70%", }, });
 
     gsap.from(".footer", { opacity: 0, y: 60, duration: 1.3, ease: "power3.out", scrollTrigger: { trigger: ".footer", start: "top 85%", }, });
     gsap.from(".footer-logo", { opacity: 0, scale: 0.8, duration: 1.1, ease: "power2.out", scrollTrigger: { trigger: ".footer-logo", start: "top 90%", }, });

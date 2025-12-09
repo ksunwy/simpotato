@@ -4,7 +4,7 @@ import { useState } from "react"
 const header = ({ aboutSectionsRef, productsRef, footerRef, wherebuyRef, scrollToSection }: { aboutSectionsRef: any, productsRef: any, footerRef: any, wherebuyRef: any, scrollToSection: any }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
-    <header className={`fixed top-0 left-0 flex flex-row items-center justify-between w-full z-100 ${isOpen ? "h-dvh" : "h-[50px]"} md:h-[6.16rem] bg-(--brown) transition-all duration-700`}>
+    <header className={`fixed top-0 left-0 flex flex-row items-center justify-between w-full z-100 ${isOpen ? "h-dvh" : "h-[50px]"} md:h-[6.16rem] bg-(--blue) transition-all duration-700`}>
       <button onClick={() => setIsOpen(!isOpen)} className={`absolute top-[20px] left-[90%] -translate-x-1/2 flex md:hidden! z-101 ${isOpen ? "rotate-90" : ""}`}>
         <svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="24" height="2.20409" rx="0.5" fill="#FFFCF4" />
@@ -30,12 +30,13 @@ const header = ({ aboutSectionsRef, productsRef, footerRef, wherebuyRef, scrollT
           </button>
         </li>
         <li>
-          <button
-            onClick={() => { scrollToSection(footerRef); if (isOpen) setIsOpen(false) }}
+          <a
+            // onClick={() => { scrollToSection(footerRef); if (isOpen) setIsOpen(false) }}
+            href="mailto:control@x5.ru"
             className="bg-transparent border-none cursor-pointer hover:opacity-80 transition-opacity"
           >
             <span className="text-[24px]">Контакты</span>
-          </button>
+          </a>
         </li>
         <li>
           <button
@@ -67,12 +68,13 @@ const header = ({ aboutSectionsRef, productsRef, footerRef, wherebuyRef, scrollT
         </ul>
         <ul className="flex items-center gap-[3.42rem] text-[1.54rem]">
           <li>
-            <button
-              onClick={() => scrollToSection(footerRef)}
+            <a
+              href="mailto:control@x5.ru"
+              // onClick={() => scrollToSection(footerRef)}
               className="bg-transparent border-none cursor-pointer text-(--white) hover:opacity-80 transition-opacity"
             >
               Контакты
-            </button>
+            </a>
           </li>
           <li>
             <button

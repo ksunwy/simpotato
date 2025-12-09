@@ -53,12 +53,12 @@ const About = ({ aboutSectionsRef }: { aboutSectionsRef: any }) => {
     }, []);
 
     return (
-        <section ref={aboutSectionsRef} id="about" className="about-section overflow-hidden relative w-dvw h-[621px] md:h-[80.9rem] bg-linear-to-b md:bg-linear-to-r from-[#610000] to-[#9C0000] md:via-[80.89%] text-white overflow-hidden">
+        <section ref={aboutSectionsRef} id="about" className="about-section overflow-hidden relative w-dvw h-[621px] md:h-[80.9rem] bg-linear-to-b md:bg-linear-to-r from-[#002F64] to-[#0058BB] md:via-[54%] text-white ">
             <svg className="about-bg-ellipse hidden md:flex! absolute top-1/2 -translate-y-1/2 -right-25" width="796" height="945" viewBox="0 0 796 945" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="613" cy="473" rx="613" ry="705" fill="#5F0000" />
+                <ellipse cx="613" cy="473" rx="613" ry="705" fill="#003D81" />
             </svg>
             <svg className="about-bg-ellipse-mobile flex md:hidden! absolute -bottom-[40%] left-1/2 -translate-x-1/2" width="501" height="550" viewBox="0 0 501 550" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="250.5" cy="275" rx="250.5" ry="275" fill="#5F0000" />
+                <ellipse cx="250.5" cy="275" rx="250.5" ry="275" fill="#003D81" />
             </svg>
 
             <Image src={"/img/AboutProduct.png"} alt="simpotato" className="about-image absolute top-[48%] -translate-y-1/2 right-0 hidden md:flex! w-[480px] h-[550px] 2xl:w-[599px] 2xl:h-[716px]" width={599} height={716} />

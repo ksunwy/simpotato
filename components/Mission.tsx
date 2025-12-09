@@ -1,4 +1,10 @@
 import Image from "next/image";
+import { useState, useRef } from 'react';
+import { Swiper, SwiperSlide, SwiperClass } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import SliderButtons from './SliderButtons';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const items = [
   { id: 1, text: "Натуральный картофель", img: "/img/mission/missionOnion.jpg" },
@@ -8,13 +14,16 @@ const items = [
 ];
 
 const Mission = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef<SwiperClass | null>(null);
+
   return (
     <section className="mission-section overflow-hidden relative w-dvw h-fit md:min-h-dvh width-restrictions py-[50px] md:py-[12.84rem] flex flex-col justify-center gap-[7.7rem]">
       <div className="flex flex-col gap-[20px] md:gap-[2.56rem]">
         <span className="mission-subtitle text-[16px] md:text-[2.05rem]">Миссия бренда</span>
         <h2 className="mission-title text-(--blue) font-bold text-[33px] md:text-[5.47rem] leading-[32px] md:leading-[5.9rem] uppercase">Превращать каждый момент <br /> в маленькое удовольствие</h2>
       </div>
-      <div className="relative flex flex-col md:grid md:grid-cols-2 2xl:flex 2xl:flex-row items-center gap-[40px] md:gap-[3.03rem] justify-center w-fit mx-auto">
+      <div className="relative hidden md:grid md:grid-cols-2 2xl:flex 2xl:flex-row items-center gap-[40px] md:gap-[3.03rem] justify-center w-fit mx-auto">
         {items.map((item, index) => {
           const isLastItem = index === items.length - 1;
           return (
@@ -34,9 +43,59 @@ const Mission = () => {
                 />
               )}
             </div>
-
           )
         })}
+      </div>
+      <div className="md:hidden flex relative w-full h-fit opacity-100">
+        <Swiper
+          modules={[Navigation]}
+          slidesPerView={1}
+          navigation={{
+            prevEl: ".custom-prev-missions",
+            nextEl: ".custom-next-missions",
+          }}
+          speed={500}
+          className="w-full h-full"
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        >
+          {items.map((item, index) => {
+            const isLastItem = index === items.length - 1;
+            return (
+              <SwiperSlide key={item.id}>
+                <div className="opacity-100 w-full h-full flex flex-col gap-[40px] items-center justify-center">
+                  <Image
+                    src={item.img}
+                    alt={item.text}
+                    width={280}
+                    height={280}
+                    className="rounded-sm w-full"
+                  />
+                  <div className="flex flex-col gap-[25px] items-center justify-center max-w-[320px] opacity-100">
+                    <p className="text-center text-[18px] md:font-bold md:text-(--blue) opacity-100">
+                      {item.text}
+                    </p>
+                  </div>
+                  {isLastItem && (
+                <Image
+                  src="/img/icons/king-potato.png"
+                  alt="Potato-King"
+                  width={68.05}
+                  height={95.04}
+                  className="mission-king absolute bottom-20 -right-0"
+                />
+              )}
+                </div>
+              </SwiperSlide>
+            )
+          })}
+        </Swiper>
+        <SliderButtons
+          prev="custom-prev-missions"
+          next="custom-next-missions"
+          activeIndex={activeIndex}
+          totalSlides={items.length}
+        />
       </div>
     </section>
   )
