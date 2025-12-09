@@ -82,7 +82,7 @@ const Mission = () => {
                   alt="Potato-King"
                   width={68.05}
                   height={95.04}
-                  className="mission-king absolute bottom-20 -right-0"
+                  className="mission-king absolute bottom-20 right-0"
                 />
               )}
                 </div>

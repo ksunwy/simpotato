@@ -92,7 +92,7 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                     speed={900}
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
                     onSlideChange={handleSlideChange}
-                    navigation={{ prevEl: ".custom-prev", nextEl: ".custom-next" }}
+                    navigation={{ prevEl: ".custom-prev-products", nextEl: ".custom-next-products" }}
                     className="w-full md:h-[40dvh] lg:h-[70dvh]"
                 >
 

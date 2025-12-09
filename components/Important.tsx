@@ -64,8 +64,8 @@ const Important = () => {
                     modules={[Navigation]}
                     slidesPerView={1}
                     navigation={{
-                        prevEl: ".custom-prev-missions",
-                        nextEl: ".custom-next-missions",
+                        prevEl: ".custom-prev-important",
+                        nextEl: ".custom-next-important",
                     }}
                     speed={500}
                     className="w-full h-full"
@@ -127,7 +127,7 @@ const Important = () => {
                     </SwiperSlide>
                 </Swiper>
 
-                <SliderButtons prev="custom-prev-missions" next="custom-next-missions" activeIndex={activeIndex} totalSlides={totalSlides} />
+                <SliderButtons prev="custom-prev-important" next="custom-next-important" activeIndex={activeIndex} totalSlides={totalSlides} />
             </div>
         </section>
     )
