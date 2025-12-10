@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide, SwiperClass } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import useWidth from "@/hooks/useWidth";
 
-const initialSlideImage = "/img/slider/allProducts.png";
 const buttons = ["Тайский перец", "Сметана и зелень", "Сыр", "Краб", "С солью", "Марокканский соус"];
 export const buttonColors = ["#ED323C", "#0050A9", "#FDB81C", "#FF808B", "#2AB5AD", "#216437"];
 const products = ["/img/products/pepper.png", "/img/products/onion.png", "/img/products/cheese.png", "/img/products/crab.png", "/img/products/salt.png", "/img/products/sauce.png"];
@@ -14,6 +13,7 @@ const Products = ({ productsRef }: { productsRef: any }) => {
     const {isMobile} = useWidth();
     const swiperRef = useRef<SwiperClass | null>(null);
     const firstLoad = useRef(true);
+    const initialSlideImage = isMobile ? "/img/products/allProductsMobile.png" : "/img/products/allProducts.png";
 
     const normalizeIndex = (index: number) => {
         const total = buttons.length;
@@ -93,7 +93,7 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
                     onSlideChange={handleSlideChange}
                     navigation={{ prevEl: ".custom-prev-products", nextEl: ".custom-next-products" }}
-                    className="w-full md:h-[40dvh] lg:h-[70dvh]"
+                    className="w-full h-fit md:h-[50dvh] lg:h-[70dvh]"
                 >
 
                     <SwiperSlide key="first">
@@ -103,7 +103,7 @@ const Products = ({ productsRef }: { productsRef: any }) => {
                                 alt="All products"
                                 width={1471}
                                 height={870.53}
-                                className="2xl:scale-250 xl:scale-200 md:scale-150 scale-100 xl:mb-40 md:mb-10 md:pt-0 pt-40"
+                                className="2xl:scale-220 xl:scale-200 md:scale-150 scale-100 xl:mb-40 md:mb-0 md:pt-0"
                             />
                         </div>
                     </SwiperSlide>
