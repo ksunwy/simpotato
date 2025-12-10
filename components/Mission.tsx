@@ -91,8 +91,8 @@ const Mission = () => {
           })}
         </Swiper>
         <SliderButtons
-          prev="custom-prev-missions"
-          next="custom-next-missions"
+          prev="custom-prev-missions top-[43.5%]"
+          next="custom-next-missions top-[43.5%]"
           activeIndex={activeIndex}
           totalSlides={items.length}
         />

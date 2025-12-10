@@ -4,7 +4,7 @@ const SliderButtons = ({prev, next, activeIndex, totalSlides, nodisable}: {prev:
     <>
          <button
             className={`
-              pointer-events-auto ${prev} absolute left-6 top-1/2 -translate-y-1/2 z-20
+              pointer-events-auto absolute left-6 top-1/2 -translate-y-1/2 ${prev} z-20
               transition-opacity duration-300
               ${nodisable ? "" : activeIndex === 0 ? "opacity-40 cursor-default" : "opacity-100 cursor-pointer"}
             `}
@@ -35,7 +35,7 @@ const SliderButtons = ({prev, next, activeIndex, totalSlides, nodisable}: {prev:
 
           <button
             className={`
-              pointer-events-auto ${next} absolute right-6 top-1/2 -translate-y-1/2 z-20 rotate-180
+              pointer-events-auto absolute right-6 top-1/2 -translate-y-1/2 ${next} z-20 rotate-180
               transition-opacity duration-300
               ${nodisable ? "" : activeIndex === totalSlides - 1 ? "opacity-40 cursor-default" : "opacity-100 cursor-pointer"}
             `}

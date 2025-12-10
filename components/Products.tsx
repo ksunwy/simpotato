@@ -49,7 +49,7 @@ const Products = ({ productsRef }: { productsRef: any }) => {
         <section
             ref={productsRef}
             id="products"
-            className="products-section overflow-hidden bg-[#F2F2F2] w-dvw h-fit relative flex flex-col gap-[40px] md:gap-[4.19rem] pt-[50px] pb-[122px] md:py-[6.84rem]"
+            className="products-section overflow-hidden bg-[#F2F2F2] w-dvw h-fit relative flex flex-col gap-[40px] md:gap-[4.19rem] pt-[50px] pb-[72px] md:py-[6.84rem]"
         >
             <div className="absolute top-1/2 left-1/2 w-full h-full -translate-y-1/2 -translate-x-1/2">
                 <Image
