@@ -86,7 +86,7 @@ const header = ({ aboutSectionsRef, productsRef, footerRef, wherebuyRef, scrollT
           </li>
         </ul>
       </nav>
-      <div className="bg-(--white) px-10 py-[2.05rem] absolute top-0 left-1/2 -translate-x-1/2 rounded-b-[2.22rem] drop-shadow-[3px_4px_4.3px_rgba(86,0,2,0.2)]">
+      <div className="bg-(--white) px-10 py-[2.05rem] absolute top-0 left-1/2 -translate-x-1/2 rounded-b-[2.22rem] drop-shadow-[3px_4px_4.3px_rgba(0,80,169,0.2))]">
         <Image src={"/svg/Logo.svg"} alt="SIMPOTATO" width={200} height={64} />
       </div>
     </header>
