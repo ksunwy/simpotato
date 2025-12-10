@@ -10,7 +10,7 @@ const products = ["/img/products/pepper.png", "/img/products/onion.png", "/img/p
 
 const Products = ({ productsRef }: { productsRef: any }) => {
     const [activeIndex, setActiveIndex] = useState<number>(-1);
-    const {isMobile} = useWidth();
+    const { isMobile } = useWidth();
     const swiperRef = useRef<SwiperClass | null>(null);
     const firstLoad = useRef(true);
     const initialSlideImage = isMobile ? "/img/products/allProductsMobile.png" : "/img/products/allProducts.png";
@@ -115,8 +115,9 @@ const Products = ({ productsRef }: { productsRef: any }) => {
 
                         if (showingInitial) {
                             isActive = false;
-                            isLeft = false;
-                            isRight = false;
+                            isLeft = i === buttons.length - 1;
+
+                            isRight = i === 0;
                         }
 
                         return (

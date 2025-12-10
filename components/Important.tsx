@@ -12,7 +12,7 @@ const Important = () => {
     return (
         <section className="important-section relative overflow-hidden w-dvw h-[522px] md:h-dvh bg-linear-to-b from-[#600000] to-[#AC0000] flex items-center justify-center">
             <div className="w-full h-fit width-restrictions hidden md:flex flex-col gap-[13.69rem] text-white">
-                <div className="flex items-center gap-5 justify-between">
+                <div className="grid grid-cols-2 items-center gap-5 ">
                     <div className="important-item flex items-center gap-[2.99rem]">
                         <Image src={"/img/important/mission1.png"} alt="Кетчуп" width={201} height={201} className='important-img w-[150px] h-[150px] lg:w-[201px] lg:h-[201px]' />
                         <div className="important-text flex flex-col gap-[2.99rem]">
@@ -24,7 +24,7 @@ const Important = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="important-item flex items-center gap-[2.99rem]">
+                    <div className="important-item flex items-center gap-[2.99rem] xl:w-[600px] xl:ml-auto">
                         <Image src={"/img/important/mission2.png"} alt="Potato-King" width={201} height={201} className='important-img w-[150px] h-[150px] lg:w-[201px] lg:h-[201px]' />
                         <div className="important-text flex flex-col gap-[2.99rem]">
                             <span className="important-title text-[#FFB400] text-[2.56rem] font-bold uppercase">Красота в деталях</span>
@@ -35,7 +35,7 @@ const Important = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex items-center gap-5 justify-between">
+                <div className="grid grid-cols-2 items-center gap-5">
                     <div className="important-item flex items-center gap-[2.99rem]">
                         <Image src={"/img/important/mission3.png"} alt="Перец" width={201} height={201} className='important-img w-[150px] h-[150px] lg:w-[201px] lg:h-[201px]' />
                         <div className="important-text flex flex-col gap-[2.99rem]">
@@ -46,7 +46,7 @@ const Important = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="important-item flex items-center gap-[2.99rem]">
+                    <div className="important-item flex items-center gap-[2.99rem] xl:w-[600px] xl:ml-auto">
                         <Image src={"/img/important/mission4.png"} alt="Smile" width={201} height={201} className='important-img w-[150px] h-[150px] lg:w-[201px] lg:h-[201px]' />
                         <div className="important-text flex flex-col gap-[2.99rem]">
                             <span className="important-title text-[#FFB400] text-[2.56rem] font-bold uppercase">Наслаждение вкусом</span>

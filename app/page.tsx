@@ -114,7 +114,7 @@ export default function Home() {
   }, [isMobile, isClientReady]);
 
   return (
-    <div ref={wrapperRef} id="smooth-wrapper" className='overflow-hidden md:overflow-auto'>
+    <div ref={wrapperRef} id="smooth-wrapper" className='overflow-hidden'>
       <Header
         aboutSectionsRef={aboutSectionsRef}
         productsRef={productsRef}
